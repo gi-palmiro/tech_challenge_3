@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Sebo Online - Front-End (React + Bootstrap) & Back-End Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição do Projeto
 
-## Available Scripts
+Este projeto foi desenvolvido como parte de um desafio técnico, com o objetivo de criar um site para um **sebo online** utilizando **React**, **Bootstrap**, **HTML**, e a integração com o **back-end** de um projeto anterior. O site contém três abas principais: **Início**, **Livros Disponíveis** e **Lista de Desejos**. O objetivo é permitir aos usuários visualizar os livros disponíveis no acervo do sebo e gerenciar suas listas de desejos.
 
-In the project directory, you can run:
+## Tecnologias Utilizadas
 
-### `npm start`
+- **Front-End**:
+  - **React.js**: Criação de componentes reutilizáveis e gerenciamento de estado.
+  - **Bootstrap 5**: Estilização e layout responsivo.
+  - **HTML**: Estruturação do conteúdo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Back-End**:
+  - **Node.js** e **Express**: Gestão das rotas e comunicação com o front-end.
+  - **MySQL**: Banco de dados para armazenar informações sobre os livros e a lista de desejos.
+  - **Axios**: Utilizado no front-end para realizar requisições HTTP ao back-end.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Estrutura do Site
 
-### `npm test`
+### 1. **Aba "Início"**
+A aba "Início" contém uma breve descrição do sebo, seus serviços e proposta. Esta aba utiliza componentes de **React** e estilização com **Bootstrap**, garantindo uma interface simples e responsiva.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. **Aba "Livros Disponíveis"**
+Esta aba exibe todos os livros disponíveis no acervo do sebo. Para implementar essa funcionalidade, foi necessário realizar algumas alterações no banco de dados:
 
-### `npm run build`
+- **Coluna `image`**: Foi adicionada à tabela `books` para armazenar o caminho da imagem de cada livro. As imagens são exibidas dinamicamente na listagem.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A lista de livros é carregada através de uma requisição **GET** ao back-end, utilizando a rota configurada no Express. As informações incluem título, autor, preço e a imagem associada.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. **Aba "Lista de Desejos"**
+A aba "Lista de Desejos" permite que os usuários adicionem e gerenciem livros que gostariam de adquirir futuramente. Para implementar essa funcionalidade, foi criada uma nova tabela no banco de dados chamada `wish_list`, com as seguintes colunas:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Nome**: Nome do usuário.
+- **Email**: E-mail do usuário.
+- **Livro**: Nome do livro desejado.
+- **Autor**: Autor do livro.
+- **Preço**: Preço estimado.
+- **Edit**: Coluna adicional usada para controlar a edição dos registros, com valor **1** sendo setado quando a rota **PUT** é utilizada para atualizar um item da lista.
 
-### `npm run eject`
+Foram implementadas novas rotas para interagir com essa tabela:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **GET `/wishList`**: Retorna a lista de desejos.
+- **POST `/wishList`**: Adiciona um novo item à lista de desejos.
+- **PUT `/updateWishList/:id`**: Atualiza um item da lista de desejos e seta o valor da coluna **edit** para **1**.
+- **DELETE `/deleteWishList/:id`**: Remove um item da lista de desejos.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Essas rotas foram desenvolvidas no back-end e atualizadas no repositório do projeto (`tech_challenge2`).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Configurações do Back-End
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Alterações na Tabela `books`:
+- **Coluna `image`**: Adicionada à tabela `books` para armazenar o caminho da imagem associada a cada livro. Isso permite que o front-end exiba as imagens dos livros.
 
-## Learn More
+### Tabela `wish_list`:
+Criada para armazenar os itens da lista de desejos dos usuários com os seguintes campos:
+- **Nome**
+- **Email**
+- **Livro**
+- **Autor**
+- **Preço**
+- **Edit**: Um campo que registra o valor **1** quando um registro é atualizado via rota **PUT**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Rotas do Back-End:
+1. **GET `/books`**: Retorna todos os livros disponíveis no acervo.
+2. **GET `/wishList`**: Retorna a lista de desejos do usuário.
+3. **POST `/wishList`**: Adiciona um novo livro à lista de desejos.
+4. **PUT `/updateWishList/:id`**: Atualiza um livro existente na lista de desejos e define o campo `edit` como **1**.
+5. **DELETE `/deleteWishList/:id`**: Remove um livro da lista de desejos.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Como Executar o Projeto
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Front-End
+1. Clone o repositório do front-end.
+2. Instale as dependências com:
+   ```bash
+   npm install
+2. Execute o projeto com: 
+```bash
+   npm start

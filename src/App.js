@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import './section_books.css';
+import './section_wishlist.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
@@ -243,10 +244,10 @@ function App() {
   return (
     <div>
       <header>
-        <div className="container-fluid custom-background">
+        <div className="container-fluid custom-header">
           <div className="row">
             <div className="col-md-2">
-              <div className="main-logo" style={{ paddingTop: '20px' }}>
+              <div className="main-logo" style={{ paddingTop: '10px' }}>
                 <img src="/images/logo-no-background.png" alt="Logo" className="img-fluid" />
               </div>
             </div>
@@ -264,7 +265,7 @@ function App() {
                     aria-selected={activeTab === 'home'} // Define o aria-selected
                     onClick={() => handleTabChange('home')} // Muda a aba quando clicado
                   >
-                    Home
+                    Início
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -279,7 +280,7 @@ function App() {
                     aria-selected={activeTab === 'books'}
                     onClick={() => handleTabChange('books')}
                   >
-                    Livros Disponíveis
+                    Livros Disponiveís
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -294,7 +295,7 @@ function App() {
                     aria-selected={activeTab === 'wish-list'}
                     onClick={() => handleTabChange('wish-list')}
                   >
-                    Wish List
+                    Lista de Desejos
                   </button>
                 </li>
               </ul>
@@ -314,19 +315,19 @@ function App() {
             >
               <div className="row align-items-center justify-content-between">
                 <div className="col-lg-5 order-lg-1">
-                  <span className="section-subtitle" data-aos="fade-up">Welcome</span>
-                  <h1 className="mb-4" data-aos="fade-up">
-                    Excepteur sint occaecat cupidatat non proident
+                  <span className="section-subtitle" data-aos="fade-up">Bem vindo à Bookstore</span>
+                  <h1 className="mb-3" data-aos="fade-up">
+                    Onde cada página se transforma em uma jornada
                   </h1>
                   <p data-aos="fade-up">
-                    Far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts. Separated they
-                    live in Bookmarksgrove right at the coast of the Semantics, a large
-                    language ocean.
+                  Aqui, em nosso sebo, você encontra um universo de histórias, conhecimentos e curiosidades. Especializados em livros usados, raridades e edições esgotadas, oferecemos um acervo único para leitores apaixonados e colecionadores exigentes. Cada obra em nossas prateleiras carrega uma história própria, uma jornada que já percorreu outros olhos e mentes, e que agora está à espera de um novo capítulo com você.
+
+Seja para descobrir clássicos esquecidos, relíquias literárias ou apenas para folhear algo diferente, nossa livraria é o lugar perfeito para quem ama o charme e a autenticidade dos livros de segunda mão. Aqui, cada livro tem uma história para contar, e estamos ansiosos para ajudá-lo a encontrar a sua próxima grande leitura.
+
+Explore, descubra e apaixone-se!
                   </p>
-                  <p className="mt-5" data-aos="fade-up">
-                    {/* <a href="#" className="btn-get-started">Buy Now</a> */}
-                    <button type="submit" className="btn-get-started">Buy Now</button>
+                  <p className="mt-3" data-aos="fade-up">
+                    <button type="submit" className="btn-get-started">Compre Agora</button>
                   </p>
 
                 </div>
@@ -371,7 +372,7 @@ function App() {
 
 
       {/* Tab Books Available */}
-      <main className="custom-background" id="books-tab">
+      <main className=" py-0 custom-background" id="books-tab">
         <div className="container-fluid" >
           <div className="tab-content">
             <div
@@ -381,11 +382,8 @@ function App() {
             >
               <div className="row">
                 <div className="col-md-12">
-                  <div className="section-header align-center">
-                    <div className="title">
-                      <span>Some quality items</span>
-                    </div>
-                    <h2 class="section-title">Popular Books</h2>
+                  <div className="section-header align-center" >
+                    <h2 class="section-title" >Popular Books</h2>
                   </div>
                   <ul className="custom-tabs">
                     {['Todos', 'Auto Ajuda', 'Escolar', 'Romance', 'Terror', 'Ficcao'].map((genre, index) => (
@@ -459,9 +457,9 @@ function App() {
             >
               <div className="row">
                 <div className="col">
-                  <div className="section-header align-center">
+                  <div className="wishlist-section-header align-center">
                     <div className="title">
-                      <h2 class="section-title">Lista de Desejos</h2>
+                      <h2 class="wishlist-section-title">Lista de Desejos</h2>
                       <span>Qual livro você gostaria de ver na nossa loja?</span>
                     </div>
                   </div>

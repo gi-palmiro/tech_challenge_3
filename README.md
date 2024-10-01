@@ -2,7 +2,7 @@
 
 ## Descrição do Projeto
 
-Este projeto foi desenvolvido como parte de um desafio técnico, com o objetivo de criar um site para um **sebo online** utilizando **React**, **Bootstrap**, **HTML**, e a integração com o **back-end** de um projeto anterior. O site contém três abas principais: **Início**, **Livros Disponíveis** e **Lista de Desejos**. O objetivo é permitir aos usuários visualizar os livros disponíveis no acervo do sebo e gerenciar suas listas de desejos.
+Este projeto foi desenvolvido como parte de um desafio técnico, com o objetivo de criar um site utilizando **React**, **Bootstrap**, **HTML**, e a integração com o **back-end** de um projeto anterior. O site contém três abas principais: **Início**, **Livros Disponíveis** e **Lista de Desejos**. O objetivo é permitir aos usuários visualizar os livros disponíveis no acervo do sebo e gerenciar suas listas de desejos.
 
 ## Tecnologias Utilizadas
 
@@ -19,7 +19,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico, com o objetivo 
 ## Estrutura do Site
 
 ### 1. **Aba "Início"**
-A aba "Início" contém uma breve descrição do sebo, seus serviços e proposta. Esta aba utiliza componentes de **React** e estilização com **Bootstrap**, garantindo uma interface simples e responsiva.
+A aba "Início" contém uma breve descrição do sebo. Esta aba utiliza componentes de **React** e estilização com **Bootstrap**, garantindo uma interface simples e responsiva.
 
 ### 2. **Aba "Livros Disponíveis"**
 Esta aba exibe todos os livros disponíveis no acervo do sebo. Para implementar essa funcionalidade, foi necessário realizar algumas alterações no banco de dados:
@@ -78,3 +78,6 @@ Criada para armazenar os itens da lista de desejos dos usuários com os seguinte
 2. Execute o projeto com: 
 ```bash
    npm start
+
+
+

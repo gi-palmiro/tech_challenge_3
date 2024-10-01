@@ -4,6 +4,7 @@
     text-align: center;
     justify-content: center;
     padding-top: 0px;
+   
   }
   
   .wishlist-section-title {
@@ -11,7 +12,8 @@
     font-weight: 500;
     line-height: 1;
     position: relative;
-    margin-bottom: 75px;
+    margin-top: 0px;
+    margin-bottom: 50px;
     text-align: center;
   }
   
@@ -49,7 +51,85 @@
   }
   
   .wishlist-section-header .title span {
-    font-size: 14px;
-    color: #afafaf;
+    font-size: 16px;
+    color: #afa4a4;
     text-transform: uppercase;
+    
+  }
+
+
+  .wishlist-border-custom-forms {
+    border: 1px solid #a09393;
+    border-radius: 10px;
+    container-type: 100%;
+    margin-bottom: 30px;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    max-width: 90%; 
+    margin-left: auto;
+    margin-right: auto; 
+    
+    }
+
+
+  .wishlist-custom-forms {
+  color:#524444;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  }
+
+
+  .wishlist-btn {
+    background-color: #ADFF2F;
+    font-weight: bold;
+    color: #000; 
+    border-radius: 30px;
+    padding: 8px 30px;
+    border: 2px solid transparent;
+    transition: 0.3s all ease-in-out;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .wishlist-btn:hover {
+    border-color: #ADFF2F;
+    background-color: transparent;
+    color: #ADFF2F;
+  }
+
+  /* Table */
+
+  .wishlist-table-header {
+    background-color: #84d835;
+    color: rgb(218, 24, 24);
+  }
+  
+  /* Personalizar as linhas pares e ímpares */
+  .wishlist-row-even {
+    background-color: #f8f9fa;
+  }
+  
+  .wishlist-row-odd {
+    background-color: #e9ecef;
+  }
+  
+  /* Efeito hover nas linhas */
+  .wishlist-row:hover {
+    background-color: #adb5bd;
+    color: #000; /* Você pode alterar a cor do texto ao passar o mouse */
+  }
+  
+  /* Personalizar o corpo da tabela */
+  .wishlist-table-body td {
+    color: #495057;
+    padding: 10px;
+  }
+  
+  /* Personalizar a tabela como um todo */
+  .wishlist-table {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
   }

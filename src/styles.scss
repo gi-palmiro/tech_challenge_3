@@ -1,0 +1,14 @@
+// $prefix: 'bs-';
+
+// // Usando a variável Sass com interpolação para definir a largura da borda dos nav-tabs
+// $nav-tabs-border-width: var(--#{$prefix}border-width);
+
+// // Aplicando em um componente com nav-tabs
+// .nav-tabs {
+//   border-bottom-width: $nav-tabs-border-width;
+// }
+
+// // Agora você pode definir a custom property (variável CSS) em algum lugar do seu CSS
+// :root {
+//   --bs-border-width: 6px;
+// }

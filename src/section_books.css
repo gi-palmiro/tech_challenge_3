@@ -1,0 +1,134 @@
+.tab-content {
+    position: relative;
+  } 
+  
+[data-tab-content] {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+  } 
+  
+ .active[data-tab-content] {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+  } 
+  
+  .custom-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 80px 0;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  .custom-tabs .tab {
+    font-weight: 600;
+    color: #999;
+    margin-right: 50px;
+    cursor: pointer;
+  }
+  
+  .custom-tabs .tab.active,
+  .custom-tabs .tab:hover {
+    color: #111;
+    border-bottom: 2px solid #9A884C;
+  }
+
+  /*  Books List */
+
+
+.list-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .list-style {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slick-slider .list-style {
+    margin: 0 15px 25px;
+  }
+  
+  .list-style figcaption p {
+    margin-bottom: 20px;
+  }
+  
+  .list-style img.list-item {
+    position: relative;
+    background: #EFEEE8;
+    border: 1px solid #EAE8DF;
+    padding: 15%;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .list-style button.add-to-cart {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 3;
+    bottom: 300px;
+    bottom: -65px;
+    left: 0;
+    z-index: 9;
+    transition: 0.3s ease-out;
+  }
+  
+  .list-style:hover button.add-to-cart {
+    bottom: 380px;
+    bottom: 0;
+  }
+  
+  .list-item figcaption {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .list-item figcaption>h3 {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #74642F;
+    margin: 0;
+  }
+  .list-item figcaption>p {
+    margin: 0;
+  }
+  
+  .list-item .item-price {
+    color: #74642F;
+    font-size: 1.3em;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .list-grid .list-item {
+      width: 45%;
+    }
+  
+    .list-style img.list-item {
+      /*height: 550px;*/
+      object-fit: contain;
+      margin: 0 auto;
+    }
+  
+    .list-grid.col-3 .list-style,
+    .list-grid.col-4 .list-style,
+    .list-grid.col-5 .list-style {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .list-grid .list-style {
+      width: 100%;
+    }
+  }

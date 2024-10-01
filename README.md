@@ -75,9 +75,15 @@ Criada para armazenar os itens da lista de desejos dos usuários com os seguinte
 2. Instale as dependências com:
    ```bash
    npm install
-2. Execute o projeto com: 
-```bash
+2. Execute o projeto com:
+   ```bash
    npm start
-
-
-
+  
+### Back-End
+1. Clone o repositório tech_challenge2
+2. Instale as dependências com:
+   ```bash
+   npm install
+2. Execute o projeto com:
+   ```bash
+   npm start
